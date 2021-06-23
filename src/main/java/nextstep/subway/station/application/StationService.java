@@ -42,6 +42,7 @@ public class StationService {
         stationRepository.deleteById(id);
     }
 
+    @Transactional(readOnly = true)
     @Cacheable(value = STATION, key = "#id")
     public Station findStationById(Long id) {
         return stationRepository.findById(id).orElseThrow(RuntimeException::new);
