@@ -1,9 +1,7 @@
-import SectionPage from '@/views/section/SectionPage'
-
 const sectionRoutes = [
   {
     path: '/sections',
-    component: SectionPage
+    component: () => import(/* webpackChunkName: "sections" */ '@/views/section/SectionPage')
   }
 ]
 export default sectionRoutes

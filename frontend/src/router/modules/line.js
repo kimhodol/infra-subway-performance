@@ -1,9 +1,7 @@
-import LinePage from '@/views/line/LinePage'
-
 const lineRoutes = [
   {
     path: '/lines',
-    component: LinePage
+    component: () => import(/* webpackChunkName: "lines" */ '@/views/line/LinePage')
   }
 ]
 export default lineRoutes
